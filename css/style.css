@@ -1,0 +1,228 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "moody-babe";
+    src: url("./moody_babe/moody-babe.ttf");
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    font-family: "moody-babe", sans-serif;
+}
+
+h1 {
+    display: inline-block;
+    position: absolute;
+    top: 10%;
+    text-align: center;
+    color: black;
+    font-size: 600%;
+    background-color: rgb(255, 255, 255, 0.75);
+    padding: 1%;
+    text-decoration: underline;
+}
+
+#start-button {
+    position: absolute;
+    top: 26%;
+    padding: .5%;
+    font-size: 450%;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.75);
+    border: rgb(255, 255, 255) solid 5px;
+    cursor: pointer;
+    font-family: "moody-babe", sans-serif;
+}
+
+#subTitle {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    text-align: left;
+    padding: 0.75%;
+    color: black;
+    background-color: rgb(255, 255, 255, 0.75);
+    font-size: 300%;
+    max-width: 60%;
+}
+
+p {
+    position: absolute;
+    top: 50%;
+    text-align: left;
+    max-width: 60%;
+    padding: 0.75%;
+    color: black;
+    background-color: rgb(255, 255, 255, 0.90);
+    font-size: 250%;
+    line-height: 1.5;
+}
+
+#player1Turn {
+    display: none;
+    position: absolute;
+    top: 3.5%;
+    padding: 0.75%;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.80);
+    font-size: 400%;
+    border: rgb(0, 0, 0) solid 20px;
+}
+
+#player2Turn {
+    display: none;
+    position: absolute;
+    top: 3.5%;
+    padding: 0.75%;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.80);
+    font-size: 400%;
+    border: rgb(0, 0, 0) solid 20px;
+}
+
+#player1 {
+    display: none;
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    padding: 0.75%;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.80);
+    font-size: 400%;
+    border: rgb(255, 255, 255) solid 5px;
+}
+
+#player1Score {
+    display: none;
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    padding: 0.75%;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.80);
+    font-size: 400%;
+    border: rgb(255, 255, 255) solid 5px;
+}
+
+#player2 {
+    display: none;
+    position: absolute;
+    top: 5%;
+    right: 15%;
+    padding: 0.75%;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.80);
+    font-size: 400%;
+    border: rgb(255, 255, 255) solid 5px;
+}
+
+#player2Score {
+    display: none;
+    position: absolute;
+    top: 20%;
+    right: 15%;
+    padding: 0.75%;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.80);
+    font-size: 400%;
+    border: rgb(255, 255, 255) solid 5px;
+}
+
+#moodiez-board {
+    margin: auto;
+    display: none;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 20%;
+    width: 775px;
+    height: 775px;
+    perspective: 1000px;
+    background-color: rgb(0, 0, 0, 0.75);
+    padding: 1%;
+}
+
+.moodiez-card {
+    width: 16%;
+    height: 16%;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    margin: .33%;
+}
+
+.moodiez-card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.moodiez-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+
+#player1win {
+    position: absolute;
+    top: 25%;
+    display: none;
+    padding: 0.75%;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.80);
+    font-size: 500%;
+    border: rgb(255, 255, 255) solid 5px;
+}
+
+#player2win {
+    position: absolute;
+    top: 25%;
+    display: none;
+    padding: 0.75%;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.80);
+    font-size: 500%;
+    border: rgb(255, 255, 255) solid 5px;
+}
+
+#draw {
+    position: absolute;
+    top: 25%;
+    display: none;
+    padding: 0.75%;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.80);
+    font-size: 500%;
+    border: rgb(255, 255, 255) solid 5px;
+}
+
+#playagain {
+    position: absolute;
+    top: 60%;
+    display: none;
+    padding: 0.75%;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.80);
+    font-size: 200%;
+    border: rgb(255, 255, 255) solid 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
